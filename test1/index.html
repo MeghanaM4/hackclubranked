@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><script src="https://cdn.tailwindcss.com"></script><style>body { margin: 0; font-family: system-ui; background: #08131f; color: #fff; }
+main { min-height: 100vh; display: grid; place-items: center; overflow: hidden; }
+.planet { width: 220px; aspect-ratio: 1; border-radius: 50%; background: #D891D9;
+  box-shadow: 0 0 0 32px #497CBF22, 0 0 90px #D891D988; display: grid; place-items: center; }
+h1 { font-size: 36px; transform: rotate(-4deg); }</style></head><body><div>lets go</div><script>
+window.__RANKED_PREVIEW__ = false;
+function __rankedNormalizePage(page) {
+  return String(page).split("#")[0].split("?")[0].replace(/^\.\//, "").replace(/^\/+/, "");
+}
+window.goTo = function goTo(page) {
+  if (window.__RANKED_PREVIEW__) {
+    window.parent.postMessage({ source: "ranked-preview", type: "navigate", page: __rankedNormalizePage(page) }, "*");
+  } else {
+    window.location.href = page;
+  }
+};</script><script>document.querySelector('.planet')?.addEventListener('click', () => {
+  document.body.classList.toggle('clicked');
+});</script></body></html>
