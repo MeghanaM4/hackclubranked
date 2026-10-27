@@ -1,0 +1,56 @@
+<!doctype html>
+<html><head><script>
+window.__RANKED_PREVIEW__ = false;
+function __rankedNormalizePage(page) {
+  return String(page).split("#")[0].split("?")[0].replace(/^\.\//, "").replace(/^\/+/, "");
+}
+window.goTo = function goTo(page) {
+  if (window.__RANKED_PREVIEW__) {
+    window.parent.postMessage({ source: "ranked-preview", type: "navigate", page: __rankedNormalizePage(page) }, "*");
+  } else {
+    window.location.href = page;
+  }
+};</script><meta charset="utf-8"><meta name="viewport" content="width=device-width"><script src="https://cdn.tailwindcss.com"></script><style>@import "https://unpkg.com/xp.css";
+
+body {
+  margin: 0;
+  font-family: ui-monospace, Menlo, monospace;
+  background: #fff3b8;
+  color: #1f1f20;
+}
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.blob {
+  background: #fff3b8;
+  border: 3px solid #20201f;
+  padding: 48px 64px;
+  border-radius: 40% 60% 55% 45% / 45% 40% 60% 55%;
+  box-shadow: 6px 6px 0 #20201f;
+  transform: rotate(-2deg);
+}
+h1 {
+  font-size: 32px;
+  margin: 0;
+}
+</style></head>
+  <body>
+    <div class="flex flex-col w-screen items-center">
+      <h1>DUCK CULT</h1>
+      <div>do you hate ducks?</div>
+    <div class="mb-2">well we do too</div> 
+    
+    <button class="p-2 border border-4 border-black" onclick="goTo('duck.html')">join our cult</button>
+    </div>
+
+<p>
+  that's it that's the entire website
+</p>
+
+  
+
+  <script>document.querySelector('.blob')?.addEventListener('click', () => {
+  document.body.classList.toggle('clicked');
+});</script></body></html>
